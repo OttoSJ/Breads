@@ -8,6 +8,7 @@ const app = express();
 
 // MIDDLEWARE
 app.use(express.json());
+app.use(express.static("public"));
 app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
@@ -20,6 +21,11 @@ app.get("/", (req, res) => {
 // ROUTES BREADS
 const breadsControllers = require("./controllers/breads_controllers");
 app.use("/breads", breadsControllers);
+
+// WILDCARD ROUTES
+app.get("*", (req, res) => {
+  res.send("404");
+});
 
 // LISTEN
 app.listen(PORT, () => {
