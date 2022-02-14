@@ -24,7 +24,7 @@ app.use("/breads", breadsControllers);
 
 // WILDCARD ROUTES
 app.get("*", (req, res) => {
-  res.send("404");
+  res.render("404");
 });
 
 // LISTEN
