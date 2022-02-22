@@ -9,7 +9,13 @@ const PORT = process.env.PORT || 3000;
 const breadsControllers = require("./controllers/breads_controllers");
 const app = express();
 
+<<<<<<< HEAD
 // VIEW ENGINE
+=======
+// MIDDLEWARE
+app.use(express.json());
+app.use(express.static("public"));
+>>>>>>> 464a77c6686bd70bbb9aa29c8e2353ad8e28d07c
 app.set("views", __dirname + "/views");
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
@@ -39,6 +45,11 @@ mongoose
   })
   .then(() => console.log("DB connected"))
   .catch((err) => console.error(err));
+
+// WILDCARD ROUTES
+app.get("*", (req, res) => {
+  res.render("404");
+});
 
 // LISTEN
 app.listen(PORT, () => {
