@@ -42,7 +42,7 @@ breads.get("/:id", (req, res) => {
   Bread.findById(req.params.id)
     .populate("baker")
     .then((foundBread) => {
-      res.render("Show", {
+      res.render("show", {
         bread: foundBread,
       });
     })

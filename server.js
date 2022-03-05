@@ -5,7 +5,7 @@ const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 
 // CONFIGURATION
-const PORT = process.env.PORT || 3010;
+const PORT = process.env.PORT;
 const app = express();
 
 // VIEW ENGINE
