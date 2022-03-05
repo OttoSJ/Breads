@@ -4,7 +4,7 @@ function Default(html) {
   return (
     <html>
       <head>
-        <title>{html.title || "Default"}</title>
+        <title>BreadCRUD</title>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"
